@@ -21,4 +21,29 @@ class ApplicationController < Sinatra::Base
       car.destroy
       car.to_json
   end
+
+  post '/cars' do
+    car = Car.create(
+      make_and_model: params[:make_and_model],
+      color: params[:color],
+      year: params[:year],
+      mileage: params[:mileage],
+      price: params[:price],
+      dealership_id: params[:dealership_id]
+    )
+    car.to_json
+  end
+
+  patch '/cars/:id' do
+    car = Car.find(params[:id])
+    car.update(
+      make_and_model: params[:make_and_model],
+      color: params[:color],
+      year: params[:year],
+      mileage: params[:mileage],
+      price: params[:price],
+      dealership_id: params[:dealership_id]
+    )
+    car.to_json
+  end
 end

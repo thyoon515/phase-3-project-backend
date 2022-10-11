@@ -1,19 +1,23 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
+  get "/dealerships" do
+      dealerships = Dealership.all
+      dealerships.to_json
   end
 
-  get "/dealerships" do
-      dealership = Dealership.all
+  post "/dealerships" do
+    dealership = Dealership.create(
+      name: params[:name],
+      location: params[:location],
+      contact: params[:contact]
+      )
       dealership.to_json
   end
 
   get "/cars" do
-      car = Car.all
-      car.to_json
+      cars = Car.all
+      cars.to_json(include: :dealership)
   end
 
   delete '/cars/:id' do

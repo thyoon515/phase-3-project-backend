@@ -1,125 +1,82 @@
-# Phase 3 Project Guidelines
+# ![](Car4U.png)
 
-## Learning Goals
+Buy or sell used cars through a dealership.
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+# Description
 
-## Introduction
+Car4U is a single page application built with React.jsx and material UI for css on the client side. Ruby with Sinatra and ActiveRecord on the server side. Existing data were planted within the seed.rb file using faker gem. 
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+There are 4 main features for Car model of the app, which follows CRUD actions.
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+Users can:
 
-## Requirements
+1. Add used cars which they can sell through a dealership (Create).
+2. Access the list of all cars (Read).
+3. Edit existing cars in the list (Update).
+4. Delete the car once it is sold (Delete).
 
-For this project, you must:
+In addition, there are 2 main features for Dealership model,
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+Users can:
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+1. Access the list of all dealerships (Read).
+2. Add new dealership (Create).
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+### Model Relationship Diagram
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+Cars and dealerships have one to many association. Cars belong to a dealership and dealership has many cars.
 
-## Getting Started
+# ![](Cars_and_dealerships.png)
 
-### Backend Setup
+## How To Use
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+![](Car4U_Demo.png)
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+# Getting Started
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+## Fork and Clone
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+[GitHub Repository Frontend](https://github.com/thyoon515/phase-3-project-frontend)
+\
+[GitHub Repository Backend](https://github.com/thyoon515/phase-3-project-backend)
+
+- Once you are in the GitHub repository click Code button then clone SSH
+
+- In your terminal write git clone then paste the cloned SSH
+
+```console
+~/$ git clone <Paste cloned SSH>
+```
+
+## Backend Setup
+
+Run `bundle install` to install the gems.
 
 You can start your server with:
 
 ```console
-$ bundle exec rake server
+~/phase-3-project-backend$ bundle exec rake server
 ```
 
 This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
-### Frontend Setup
+## Frontend Setup
 
-Your backend and your frontend should be in **two different repositories**.
-
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+`cd` out of the backend project directory, then `cd` into your frontend to `install` and `start` yarn.
 
 ```console
-$ npx create-react-app my-app-frontend
+~/phase-3-project-frontend$ npm install yarn
+~/phase-3-project-frontend$ yarn start
 ```
+This will run the app in the development mode.
+[http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
 
-### Fetch Example
+# Credit
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
-
-## Resources
-
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
-# phase-3-project-backend
+- Car4U Banner : [Banner Maker](https://banner.godori.dev)
+- Data Relationship Diagram : [dbdiagram.io](https://dbdiagram.io/home)
+- Flatiron School : [FlatironSchool](https://flatironschool.com/)
+- GIF : [Video-to-gif](https://ezgif.com/video-to-gif)
+- Material UI : [MUI](https://mui.com/)
